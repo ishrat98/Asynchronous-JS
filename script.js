@@ -13,7 +13,7 @@ const first= ()=> {
 
 first();
 */
-
+/*
 function getRecipe()    {
     setTimeout(() =>    {
 
@@ -38,3 +38,22 @@ function getRecipe()    {
 }
 
 getRecipe();
+*/
+
+//promise
+
+const getIDs = new Promise((resolve, reject)=> {
+
+    setTimeout(() =>    {
+        reject([100,200,500,498]);
+
+    },2000);
+});
+
+getIDs
+.then(IDs =>  {
+    console.log(IDs);
+})
+.catch(error => {
+    console.log('Error!!');
+});
