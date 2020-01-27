@@ -113,3 +113,17 @@ getIDs
         .catch(error => {
              console.log('Error!!');
          });
+         
+
+        async function getRecipesAW() {
+                const IDs = await getIDs;
+                console.log(IDs);
+                const recipe = await getRecipe(IDs[2]);
+                console.log(recipe);
+                const related = await getRelated('Jonas Schmedtmann');
+                console.log(related);
+    
+                return recipe;
+            }
+            getRecipesAW().then(result => console.log(`${result} is the best ever!`));
+    
