@@ -1,4 +1,4 @@
-const second = ()   =>  {
+/* const second = ()   =>  {
     
     setTimeout(() =>    {
         console.log("Async Msg");
@@ -12,3 +12,29 @@ const first= ()=> {
 }
 
 first();
+*/
+
+function getRecipe()    {
+    setTimeout(() =>    {
+
+        const recipeID = [100,200,2000,300];
+        console.log(recipeID);
+
+        setTimeout((id) =>    {
+
+            const recipe = {title:'Pasta', description: 'Made by ABC'};
+            console.log(`${id}: ${recipe.title} and this is ${recipe.description}`);
+
+            setTimeout(description =>  {
+
+                const recipe2 ={title:'Pizza', description:'Made by ABC'};
+                console.log(recipe2);
+            },1500, recipe.description);
+
+
+        },1000, recipeID[1]);
+
+    },2000);
+}
+
+getRecipe();
