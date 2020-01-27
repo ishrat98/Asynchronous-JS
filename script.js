@@ -45,14 +45,29 @@ getRecipe();
 const getIDs = new Promise((resolve, reject)=> {
 
     setTimeout(() =>    {
-        reject([100,200,500,498]);
+        resolve([100,200,500,498]);
 
     },2000);
 });
 
+const getRecipe = recID =>  {
+
+    return new Promise((resolve, reject) => {
+        setTimeout((ID)=> {
+            const recipe = {title:'Pasta', description: 'Made by ABC'};
+            resolve(`${ID}: ${recipe.title} and this is ${recipe.description}`);
+        },2000, recID);
+    });
+};
+
 getIDs
 .then(IDs =>  {
     console.log(IDs);
+    return getRecipe(IDs[1]);
+})
+.then(recipe=>   {
+    console.log(recipe);
+
 })
 .catch(error => {
     console.log('Error!!');
