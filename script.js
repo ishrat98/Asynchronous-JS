@@ -1,5 +1,8 @@
 const second = ()   =>  {
-    console.log("second");
+    
+    setTimeout(() =>    {
+        console.log("Async Msg");
+    },2000);
 }
 
 const first= ()=> {
